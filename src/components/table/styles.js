@@ -5,7 +5,7 @@ const useStyle = makeStyles({
         backgroundColor: 'white',
         borderRadius: '6px',
         overflow: 'auto',
-        width: '300px',
+        width: '40%',
         height: '90%',
         display: 'flex',
         flexDirection: 'column',

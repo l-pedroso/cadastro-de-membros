@@ -43,7 +43,7 @@ const useStyle = makeStyles({
 
     asideContainer:{
         flex: 1,
-        height: '600px',
+        height: '100%',
         backgroundColor: sideMenu,
         '& h3':{
             textAlign:'center',
