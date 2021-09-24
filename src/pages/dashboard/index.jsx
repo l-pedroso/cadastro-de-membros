@@ -1,6 +1,6 @@
-import { Table } from '../../components';
+import { Table, Modal } from '../../components';
 import Button from '@mui/material/Button';
-import './styles.scss';
+import {Header, Main} from './styles';
 import { useState } from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -23,13 +23,13 @@ const Dashboard = () => {
     };
 
     return (
-        <div className="wrapper">
+        <div>
            {/* <TransitionsModal open={showModal} handleClose={onModalClose} />*/}
-            <header>
+            <Header>
                 <h3>Sistema de Cadastro de Membros</h3>
-            </header>
+            </Header>
 
-            <main>
+            <Main>
                 <aside>
                     <h3>Menu</h3>
                     <div className="buttonContainer">
@@ -43,10 +43,10 @@ const Dashboard = () => {
                     </div>
                 </aside>
                 <div className="tableContainer">
-
                     <Table className="table" display={showTable} />
                 </div>
-            </main>
+            </Main>
+            <Modal open={showModal} handleClose={onModalClose}/>
         </div>
     );
 };
