@@ -1,22 +1,8 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import { Container, Title, InputText, Form, Header, InlineForm, HeaderTextField } from './styles';
 
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4,
-};
-
-export default function BasicModal({open, handleClose}) {
+export default function BasicModal({ open, handleClose }) {
 
   return (
     <div>
@@ -26,14 +12,36 @@ export default function BasicModal({open, handleClose}) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
-        </Box>
+        <Container>
+          <Header>
+            <Title>Ficha de Cadastro - A.D.P.F</Title>
+            <InlineForm>
+              <HeaderTextField required id="matricula" label="Matrícula" variant="outlined"/>
+              <HeaderTextField required id="congregacao" label="Congregação" variant="outlined"/>
+            </InlineForm>
+          </Header>
+
+          <Form>
+            <InputText required id="name" label="Nome" variant="outlined"/>
+            <InputText id="filiation" label="Filiação" variant="outlined"/>
+            <InlineForm>
+              <InputText id="nacimento" label="Nacido em:" variant="outlined" type="date" InputLabelProps={{ shrink: true }}/>
+              <InputText id="nacionalidade" label="Nacionalidade" variant="outlined"/>
+            </InlineForm>
+            <InlineForm>
+              <InputText id="natural" label="Naturalidade" variant="outlined"/>
+              <InputText id="estado" label="Estado" variant="outlined"/>
+            </InlineForm>
+            <InlineForm>
+              <InputText id="civil" label="Estado Civil" variant="outlined"/>
+              <InputText id="profissao" label="Profissão" variant="outlined"/>
+            </InlineForm>
+            <InlineForm>
+              <InputText id="escolaridade" label="Escolaridade" variant="outlined"/>
+              <InputText id="titulo" label="Título de Eleitor" variant="outlined"/>
+            </InlineForm>
+          </Form>
+        </Container>
       </Modal>
     </div>
   );
