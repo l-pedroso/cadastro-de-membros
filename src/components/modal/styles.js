@@ -1,15 +1,21 @@
 import styled from '@emotion/styled'
 import TextField from '@mui/material/TextField';
+import Button  from '@mui/material/Button';
+
+const background = "#f5f6fa";
+const header = "#353b48";
+const buttonHover = "#718093";
+
 
 export const Container = styled.div`
 display: flex;
 flex-direction: column;
-height: 400px;
+height: 500px;
 width: 800px;
 position: absolute;
 top: 50%;
 left: 50%;
-transform: translate(-35%, -50%);
+transform: translate(-35%, -45%);
 background-color: white;
 align-items: center;
 overflow: scroll;
@@ -35,9 +41,6 @@ export const InlineForm = styled.form`
 display: flex;
 justify-content: space-between;
 align-items: center;
-& > * {
-     width: 48%;
- }
 `;
 
 export const HeaderTextField = styled(InputText)`
@@ -47,5 +50,24 @@ margin: 0;
 
 export const Title = styled.h3`
 
+`;
+
+export const StandardButton = styled(Button)`
+height: 35px;
+color: ${background};
+width: 40%;
+background-color: ${header};
+margin-top: 15px;
+&:hover{
+    background-color: ${buttonHover};
+}
+
+`;
+
+export const ButtonContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-bottom: 20px;
 `;
 
