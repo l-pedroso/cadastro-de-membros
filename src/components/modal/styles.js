@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import TextField from '@mui/material/TextField';
 import Button  from '@mui/material/Button';
+import Modal from '@mui/material/Modal';
 
 const background = "#f5f6fa";
 const header = "#353b48";
@@ -65,9 +66,20 @@ margin-top: 15px;
 `;
 
 export const ButtonContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    margin-bottom: 20px;
+display: flex;
+justify-content: space-between;
+width: 90%;
+margin-bottom: 20px;
 `;
 
+export const AlertContainer = styled.div`
+position: absolute;
+top:  calc(50% - 75px);
+left: calc(50% - 80px);
+background-color: white;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-around;
+padding: 20px;
+`;
