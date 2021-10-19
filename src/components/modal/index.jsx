@@ -6,6 +6,7 @@ import {
   HeaderTextField, StandardButton, ButtonContainer, AlertContainer
 } from './styles';
 import { Member } from '../../Models/member';
+import { createMember } from '../../services/member_api';
 
 
 const formData = {
@@ -81,6 +82,7 @@ export default function BasicModal({ open, handleClose }) {
   const onSubmit = () => {
     console.log(data);
     handleExit();
+    createMember();
   };
 
 
