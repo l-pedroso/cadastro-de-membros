@@ -11,8 +11,15 @@ const Dashboard = () => {
     const { logout } = useAuth0();
 
     function onRelatorioClick() {
-        setShowTable(!showTable);
+        setShowTable(true);
     };
+
+    function onRelatorioClose(){
+        if(showTable){
+            setShowTable(false);
+        }
+        
+    }
 
     function onCadastrarClick() {
         setShowModal(true);
@@ -23,7 +30,7 @@ const Dashboard = () => {
     };
 
     return (
-        <div>
+        <div onClick={onRelatorioClose}>
            {/* <TransitionsModal open={showModal} handleClose={onModalClose} />*/}
             <Header>
                 <h3>Sistema de Cadastro de Membros</h3>
@@ -34,8 +41,6 @@ const Dashboard = () => {
                     <h3>Menu</h3>
                     <div className="buttonContainer">
                         <Button onClick={onCadastrarClick} variant="contained">Cadastrar</Button>
-                        <Button variant="contained">Alterar</Button>
-                        <Button variant="contained">Deletar</Button>
                         <Button onClick={onRelatorioClick} variant="contained">Relatórios</Button>
                         <Button variant="contained">Requerimentos</Button>
                         <Button onClick={() => logout({ returnTo: window.location.origin })}
